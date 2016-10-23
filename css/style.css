@@ -107,8 +107,8 @@ body {
     z-index: 500;
     top: 0px;
     margin: 3%;
-    font-size: 1.2em;
-    opacity: 0;
+    font-size: 1.1em;
+    opacity: 0; 
     font-family: 'Proza Libre', sans-serif;
 }
 .back-sign{
