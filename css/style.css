@@ -76,5 +76,22 @@ body {
 }
 .boardimg{
         opacity: 0;
-
+}
+.menu-right{
+    position: absolute;
+    right: 10px;
+    z-index: 150;
+    top: 10px;
+    width: 12%;
+}
+.menu-right img{
+    cursor: pointer;
+    margin-bottom: 8%
+        
+}
+.menu-right img:hover{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
