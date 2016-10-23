@@ -21,6 +21,12 @@ body {
     z-index: 50;
     background-repeat: no-repeat;
 }
+.lamp {
+    position: absolute;
+    z-index: 100;
+    top: 21%;
+    left: 8%;
+}
 .ufo-one {
     position: absolute;
     z-index: 1000;
@@ -28,6 +34,6 @@ body {
     width: 400px;
     text-align: center
 }
-.ufo-glow{
+.ufo-glow {
     opacity: 0;
 }
