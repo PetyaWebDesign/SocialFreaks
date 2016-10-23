@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head prefix="og: http://ogp.me/ns#">
     <title>Acceler8design-prices</title>
     <meta name="keywords" content="acceler8design Petya Petkova" />
@@ -24,25 +25,54 @@
     <meta name="twitter:description" content="Acceler8design Price Labels Info" />
     <meta name="twitter:image" content="https://acceler8design.com/logo.png" />
     <link rel="stylesheet" href="css/style.css">
-    
-<script src="scripts/jquery-3.1.1.min.js"></script>
+
+    <script src="scripts/jquery-3.1.1.min.js"></script>
 </head>
+
 <body>
-<div class="wrapper">
-    <div class="background-dark">
+    <div class="wrapper">
+        <div class="background-dark">
+
+        </div>
+
+        <div class="background-lite">
+        </div>
 
     </div>
 
+    <script>
+        var dt = new Date();
+        var currentHour = dt.getHours();
+        var percentOpacity = (currentHour * 4.17) / 100;
 
+        $(function() {
+            var heightWindow = $(window).height();
+            $(".background-dark").height(heightWindow);
+            $(".background-lite").height(heightWindow);
+            $(".background-dark").css("opacity", percentOpacity);
+        });
+        
+        var counter = currentHour;
+        var isEnded = true;
+        var interval = setInterval(function() {
+            if (isEnded) {
+                counter++;
+            } else {
+                counter--;
+            }
+            percentOpacity = (counter * 4.17) / 100;
+            $(".background-dark").css("opacity", percentOpacity);
 
-</div>
-
-<script>
-    $(function (){
-       var heightWindow = $(window).height();
-       $(".background-dark").height(heightWindow);
-    });
+            console.log(counter);
+            if (counter == 24) {
+                isEnded = false;
+            }
+            if (counter == 0) {
+                isEnded = true;
+            }
+        }, 500);
     </script>
 
 </body>
+
 </html>
