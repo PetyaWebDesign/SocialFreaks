@@ -37,7 +37,10 @@
 
         <div class="background-lite">
         </div>
-
+        <div class="ufo-one">
+            <img src="images/object.png" width="100%" />
+            <img src="images/ufo_glow.png" width="100%" class="ufo-glow" />
+        </div>
     </div>
 
     <script>
@@ -45,13 +48,22 @@
         var currentHour = dt.getHours();
         var percentOpacity = (currentHour * 4.17) / 100;
 
+        var heightWindow = $(window).height();
+        var widthWindow = $(window).width();
         $(function() {
-            var heightWindow = $(window).height();
+            var rightPosition = widthWindow /2 - 200;
             $(".background-dark").height(heightWindow);
             $(".background-lite").height(heightWindow);
             $(".background-dark").css("opacity", percentOpacity);
+            $(".ufo-one").animate({
+                opacity: 1,
+                left: rightPosition
+            }, 1500, function() {
+                // Animation complete.
+            });
+
         });
-        
+
         var counter = currentHour;
         var isEnded = true;
         var interval = setInterval(function() {
@@ -63,7 +75,7 @@
             percentOpacity = (counter * 4.17) / 100;
             $(".background-dark").css("opacity", percentOpacity);
 
-            console.log(counter);
+            // console.log(counter);
             if (counter == 24) {
                 isEnded = false;
             }
