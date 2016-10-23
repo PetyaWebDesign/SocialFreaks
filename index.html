@@ -38,11 +38,11 @@
 
         <div class="background-lite">
         </div>
-        
+
         <div class="menu-right">
-        <img src="images/menu-one.png" width="100%">
-             <img src="images/menu-2.png" width="100%">
-             <img src="images/menu-3.png" width="100%">
+            <img src="images/menu-one.png" width="100%" onclick="MenuClick(this)" data-name="informational" />
+            <img src="images/menu-2.png" width="100%" onclick="MenuClick(this)" data-name="ecommerce" />
+            <img src="images/menu-3.png" width="100%" onclick="MenuClick(this)" data-name="logos" />
         </div>
         <div class="lamp">
             <img src="images/lamp.png" />
@@ -50,9 +50,15 @@
         <div class="ufo-one">
             <img src="images/object.png" width="100%" />
             <img src="images/ufo_glow.png" width="100%" class="ufo-glow" />
+            <img id="label-name" src="images/info-website-label.png" />
         </div>
         <div class="board">
             <img src="images/board.png" width="100%" class="boardimg" />
+        </div>
+        
+        <div class="back-sign"> 
+            <a href="http://acceler8design.com" title="acceler8design.com">
+            <img src="images/back-sign.png" width="100%" /></a>
         </div>
     </div>
 
@@ -93,8 +99,8 @@
                 counter--;
             }
             percentOpacity = (counter * 4.17) / 100;
-            $(".background-dark").css("opacity", percentOpacity);
-
+            $(".background-dark").animate({
+                opacity: percentOpacity},500);
             // console.log(counter);
             if (counter == 24) {
                 isEnded = false;
@@ -103,6 +109,21 @@
                 isEnded = true;
             }
         }, 500);
+
+
+        function MenuClick(elem) {
+            var name = $(elem).attr("data-name");
+            console.log(name);
+            if (name == "informational") {
+                $("#label-name").attr("src", "images/info-website-label.png");
+            }
+            else if (name == "ecommerce") {
+                $("#label-name").attr("src", "images/e-commerce-label.png");
+            }
+            else if (name == "logos") {
+                $("#label-name").attr("src", "images/logo-design-label.png");
+            }
+        };
     </script>
 
 </body>
