@@ -25,7 +25,7 @@
     <meta name="twitter:description" content="Acceler8design Price Labels Info" />
     <meta name="twitter:image" content="https://acceler8design.com/logo.png" />
     <link rel="stylesheet" href="css/style.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
     <script src="scripts/jquery-3.1.1.min.js"></script>
 </head>
 
@@ -54,11 +54,15 @@
         </div>
         <div class="board">
             <img src="images/board.png" width="100%" class="boardimg" />
+            <p id="label-text">
+                Общ графичен дизайн и програмна среда; изграждане на вътрешни страници; обработка и включване на графични илюстрации; активна форма за контакт; структурирано меню; административен модул за управление на съдържанието (CMS); възможност за добавяне на допълнителни страници от администратор; техническо решение на сайта (динамичен); изготвяне на мобилна версия на сайта. Цена 250лв.
+
+            </p>
         </div>
-        
-        <div class="back-sign"> 
+
+        <div class="back-sign">
             <a href="http://acceler8design.com" title="acceler8design.com">
-            <img src="images/back-sign.png" width="100%" /></a>
+                <img src="images/back-sign.png" width="100%" /></a>
         </div>
     </div>
 
@@ -84,6 +88,8 @@
                 // Animation complete.
                 $(".ufo-glow").fadeTo(1000, 1, function() {
                     $(".boardimg").fadeTo(1500, 0.8);
+                    $("#label-name").fadeTo(1500, 1);
+                    $("#label-text").fadeTo(1500, 1);
 
                 });
             });
@@ -100,7 +106,8 @@
             }
             percentOpacity = (counter * 4.17) / 100;
             $(".background-dark").animate({
-                opacity: percentOpacity},500);
+                opacity: percentOpacity
+            }, 500);
             // console.log(counter);
             if (counter == 24) {
                 isEnded = false;
@@ -116,12 +123,15 @@
             console.log(name);
             if (name == "informational") {
                 $("#label-name").attr("src", "images/info-website-label.png");
-            }
-            else if (name == "ecommerce") {
+                $("#label-text").text("Общ графичен дизайн и програмна среда; изграждане на вътрешни страници; обработка и включване на графични илюстрации; активна форма за контакт; структурирано меню; административен модул за управление на съдържанието (CMS); възможност за добавяне на допълнителни страници от администратор; техническо решение на сайта (динамичен); изготвяне на мобилна версия на сайта. Цена 250лв. ");
+            } else if (name == "ecommerce") {
                 $("#label-name").attr("src", "images/e-commerce-label.png");
-            }
-            else if (name == "logos") {
+                $("#label-text").text("Включва всички точки от секцията “Informational website” + известяване на имейл при покупка на клиент, известяване на имейл при извършена поръчка за администратор, модул за отстъпки, временни намаления и купони, модул за регистриране на потребител, модул за доставка, модул за търсене по име на продукт, кошница за добавяне на продукти, неограничен брой продукти, администраторска част за управление на продукти, добавяне на категории и подкатегории, информация и снимка към всеки продукт. Цена – 500лв.");
+
+
+            } else if (name == "logos") {
                 $("#label-name").attr("src", "images/logo-design-label.png");
+                $("#label-text").text("Цялостно проектиране на фирмено/персонално лого в няколко различни варианта, изготвяне на графични материали за използване в различните социални медии. Цена 100лв. ");
             }
         };
     </script>
