@@ -31,7 +31,7 @@
 
 <body>
     <div class="wrapper">
-        
+
         <div class="background-dark">
 
         </div>
@@ -45,6 +45,9 @@
             <img src="images/object.png" width="100%" />
             <img src="images/ufo_glow.png" width="100%" class="ufo-glow" />
         </div>
+        <div class="board">
+            <img src="images/board.png" width="100%" class="boardimg" />
+        </div>
     </div>
 
     <script>
@@ -55,9 +58,9 @@
         var heightWindow = $(window).height();
         var widthWindow = $(window).width();
         $(function() {
-            $(".ufo-one").width(widthWindow / 8);
-            var rightPosition = widthWindow /2 -  $(".ufo-one").width() / 2;
-            var topPoistion = heightWindow /2 - 200;
+            $(".ufo-one").width(widthWindow / 5);
+            var rightPosition = widthWindow / 2 - $(".ufo-one").width() / 2;
+            var topPoistion = heightWindow / 2 - 350;
             $(".background-dark").height(heightWindow);
             $(".background-lite").height(heightWindow);
             $(".background-dark").css("opacity", percentOpacity);
@@ -67,7 +70,10 @@
                 left: rightPosition
             }, 1500, function() {
                 // Animation complete.
-                $(".ufo-glow").fadeTo(3500, 100);
+                $(".ufo-glow").fadeTo(1000, 1, function() {
+                    $(".boardimg").fadeTo(1500, 0.8);
+
+                });
             });
 
         });

@@ -60,9 +60,21 @@ body {
     position: absolute;
     z-index: 1000;
     left: -1250px;
+    top: -100px;
     width: 400px;
     text-align: center
 }
 .ufo-glow {
     opacity: 0;
+}
+.board{
+    position: absolute;
+    bottom: 10px;
+    z-index: 100;
+    width: 40%;
+    left: 30%;
+}
+.boardimg{
+        opacity: 0;
+
 }
