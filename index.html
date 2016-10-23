@@ -51,15 +51,19 @@
         var heightWindow = $(window).height();
         var widthWindow = $(window).width();
         $(function() {
-            var rightPosition = widthWindow /2 - 200;
+            $(".ufo-one").width(widthWindow / 8);
+            var rightPosition = widthWindow /2 -  $(".ufo-one").width() / 2;
+            var topPoistion = heightWindow /2 - 200;
             $(".background-dark").height(heightWindow);
             $(".background-lite").height(heightWindow);
             $(".background-dark").css("opacity", percentOpacity);
             $(".ufo-one").animate({
                 opacity: 1,
+                top: topPoistion,
                 left: rightPosition
             }, 1500, function() {
                 // Animation complete.
+                $(".ufo-glow").fadeTo(3500, 100);
             });
 
         });

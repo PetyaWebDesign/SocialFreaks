@@ -26,6 +26,7 @@ body {
     z-index: 1000;
     left: -1250px;
     width: 400px;
+    text-align: center
 }
 .ufo-glow{
     opacity: 0;
